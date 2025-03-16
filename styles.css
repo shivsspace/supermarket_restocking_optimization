@@ -1,0 +1,472 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+.input-section, .results-section, .comparison-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-inputs {
+    margin-bottom: 15px;
+}
+
+.product-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.remove-product {
+    background-color: #e74c3c;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.remove-product:hover {
+    background-color: #c0392b;
+}
+
+#add-product {
+    margin-right: 10px;
+    background-color: #2ecc71;
+}
+
+#add-product:hover {
+    background-color: #27ae60;
+}
+
+.algorithm-result {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+}
+
+#knapsack-result {
+    border-left-color: #9b59b6;
+}
+
+#greedy-result {
+    border-left-color: #e67e22;
+}
+
+.time-complexity {
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.explanation {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #95a5a6;
+}
+
+.result-content {
+    margin-top: 15px;
+}
+
+.execution-time {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.better-result {
+    background-color: #e8f8f5;
+    font-weight: bold;
+}
+
+.efficiency-comparison {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f4fd;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+.efficiency-comparison h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.efficiency-comparison p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.ml-toggle {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-label {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.ml-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.ml-prediction-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 5px;
+    border-left: 4px solid #4caf50;
+    position: relative;
+}
+
+.ml-prediction-info h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+/* New styles for greedy algorithm variants */
+.greedy-variants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.greedy-variant {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.greedy-by-profit {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+}
+
+.greedy-by-expiry {
+    background-color: #e8eaf6;
+    border-left: 4px solid #3f51b5;
+}
+
+.greedy-by-demand {
+    background-color: #e0f2f1;
+    border-left: 4px solid #009688;
+}
+
+.greedy-variant h4 {
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.greedy-by-profit h4::before {
+    content: "💰";
+    margin-right: 8px;
+}
+
+.greedy-by-expiry h4::before {
+    content: "⏱️";
+    margin-right: 8px;
+}
+
+.greedy-by-demand h4::before {
+    content: "📈";
+    margin-right: 8px;
+}
+
+.greedy-variant-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.greedy-variant-stats span {
+    font-weight: bold;
+}
+
+.greedy-variant-products {
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.greedy-variant-products li {
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.greedy-comparison-chart {
+    height: 200px;
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+.chart-bar {
+    width: 60px;
+    background-color: #64b5f6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    transition: height 0.5s ease;
+}
+
+.chart-bar.profit {
+    background-color: #ffd54f;
+}
+
+.chart-bar.expiry {
+    background-color: #7986cb;
+}
+
+.chart-bar.demand {
+    background-color: #4db6ac;
+}
+
+.chart-bar-label {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+.chart-bar-value {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.best-strategy {
+    border: 2px solid #4caf50;
+    position: relative;
+}
+
+.best-strategy::after {
+    content: "Best Strategy";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.ml-prediction-info p {
+    margin-bottom: 8px;
+}
+
+.ml-prediction-info::before {
+    content: "AI";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ml-enhanced {
+    background-color: #f1f8e9;
+    border-left: 4px solid #8bc34a;
+    padding: 2px 5px;
+    font-weight: bold;
+    color: #33691e;
+}
+
+.ml-comparison {
+    display: flex;
+    margin-top: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ml-comparison-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.ml-comparison-column:first-child {
+    background-color: #f5f5f5;
+    border-right: 1px solid #e0e0e0;
+}
+
+.ml-comparison-column:last-child {
+    background-color: #e8f5e9;
+}
+
+.ml-comparison-header {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ml-improvement {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.ml-chart {
+    height: 150px;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.ml-chart-bar {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    background-color: #2196f3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: height 0.5s ease;
+}
+
+.ml-chart-bar.enhanced {
+    background-color: #4caf50;
+}
+
+.ml-chart-label {
+    position: absolute;
+    bottom: -25px;
+    width: 40px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.ml-chart-value {
+    position: absolute;
+    top: -20px;
+    width: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}

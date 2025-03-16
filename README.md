@@ -66,3 +66,5 @@ Pull requests are welcome! Feel free to contribute to this project by improving 
 
 ---
 
+## 📎 Deployment
+https://supermarket-restocking-optimization-shivsspaces-projects.vercel.app/

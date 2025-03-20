@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (useML) {
             adjustedProducts = adjustPriorityWithPrediction(products);
         }
-        
+        //Example: If a product has low expiry days but high demand, increase its priority.
         // Run algorithms
         const knapsackResult = knapsackAlgorithm(adjustedProducts, budget);
         
